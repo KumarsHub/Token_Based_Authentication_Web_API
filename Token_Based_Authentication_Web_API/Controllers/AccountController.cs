@@ -4,11 +4,10 @@ using System.Net;
 using System.Net.Http; using System.Security.Claims; using System.Security.Cryptography; using System.Threading.Tasks;
 using System.Web;
 using System.Web.Helpers;
-using System.Web.Http; using Microsoft.AspNet.Identity; using Microsoft.AspNet.Identity.EntityFramework; using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security; using Microsoft.Owin.Security.Cookies; using Microsoft.Owin.Security.OAuth;
+using System.Web.Http; using Microsoft.AspNet.Identity; using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;  
 using Token_Based_Authentication_Web_API.DatabaseModel;
-using Token_Based_Authentication_Web_API.Models;
-using Token_Based_Authentication_Web_API.Providers; using Token_Based_Authentication_Web_API.Results;
+using Token_Based_Authentication_Web_API.Models; 
 
 namespace Token_Based_Authentication_Web_API.Controllers
 {
@@ -88,11 +87,18 @@ namespace Token_Based_Authentication_Web_API.Controllers
                     // Password Reset Token Generation
                     string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id); 
                     // URL with password Token for resetting Password
-                    string routeUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Request.GetOwinContext().Request.Host.Value}/api/Account/ResetPassword?resetCode={code}"; 
+                    string routeUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Request.GetOwinContext().Request.Host.Value}/api/Account/ResetPassword?resetCode={code}";
 
-                    // Saving Password in database for checking on the time of resetting password
-                    user.ResetPasswordCode = code;
-                    _entities.SaveChanges();
+                    try
+                    {
+                        // Saving Password in database for checking on the time of resetting password
+                        user.ResetPasswordCode = code;
+                        _entities.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        return InternalServerError(ex);
+                    } 
 
                     return ResponseMessage(Request.CreateErrorResponse(HttpStatusCode.OK, $"A password reset code is generated. Please user the following link to reset password. Link : { routeUrl }"));
                 }
