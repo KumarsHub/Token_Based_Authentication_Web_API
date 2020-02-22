@@ -85,7 +85,8 @@ namespace Token_Based_Authentication_Web_API.Controllers
                     }
 
                     // Password Reset Token Generation
-                    string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id); 
+                    string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                    code = code.Substring(0, 50);
                     // URL with password Token for resetting Password
                     string routeUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Request.GetOwinContext().Request.Host.Value}/api/Account/ResetPassword?resetCode={code}";
 

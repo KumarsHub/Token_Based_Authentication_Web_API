@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cc946f7b32b345bcb7821a549bd32bc9" Name="Diagram1">
-        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.C__MigrationHistory" Width="1.5" PointX="9" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.AspNetUser" Width="1.5" PointX="3" PointY="1.25" />
+      <Diagram DiagramId="cc946f7b32b345bcb7821a549bd32bc9" Name="Diagram1" DisplayType="true">
+        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.AspNetUserClaim" Width="1.5" PointX="6.25" PointY="3.5" />
+        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.AspNetUserLogin" Width="1.5" PointX="5.75" PointY="1" />
+        <EntityTypeShape EntityType="Token_Based_Authentication_Web_APIModel.AspNetUser" Width="2.25" PointX="3" PointY="1.25" />
         <AssociationConnector Association="Token_Based_Authentication_Web_APIModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="Token_Based_Authentication_Web_APIModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="Token_Based_Authentication_Web_APIModel.AspNetUserRoles" />

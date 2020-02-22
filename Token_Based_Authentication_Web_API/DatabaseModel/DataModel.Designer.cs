@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\kumars\Desktop\WebAPITest\Token_Based_Authentication_Web_API\Token_Based_Authentication_Web_API\DatabaseModel\DataModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Data_Folder\Repos\Token_Based_Authentication_Web_API\Token_Based_Authentication_Web_API\DatabaseModel\DataModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
